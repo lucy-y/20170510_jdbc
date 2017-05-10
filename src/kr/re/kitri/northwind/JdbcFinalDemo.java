@@ -16,7 +16,25 @@ public class JdbcFinalDemo {
         loadDriver(DRIVER_POSTGRES);
 
         JdbcService service = new JdbcService();
-        List<Customer> list = service.makeList(DB_URL,USERNAME,PASSWORD);
+        List<Customer> list = service.makeList(DB_URL, USERNAME, PASSWORD);
+
+        System.out.println("***************************************출력***************************************\n");
+        int i = 1;
+        System.out.println("\t\tCustomerid/Companyname/Contactname/Contacttitle/Address/City/Region/Postalcode/Country/Phone/Fax");
+        for (Customer e : list) {
+            System.out.printf(i + "번째: ");
+            //System.out.println(e);
+            System.out.println(e.getCustomerid() + "/" + e.getCompanyname() + "/" + e.getContactname() + "/" +
+                    e.getContacttitle() + "/" + e.getAddress() + "/" + e.getCity() + "/" + e.getRegion() + "/" +
+                    e.getPostalcode() + "/" + e.getCountry() + "/" + e.getPhone() + "/" + e.getFax());
+            i++;
+        }
+        System.out.println("\n");
+
+        System.out.println("***************************************출력***************************************\n\n");
+        for(Customer e : list){
+            System.out.println(e.toString());
+        }
 
     }
 

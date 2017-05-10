@@ -12,16 +12,13 @@ public class Customer {
     private String address;
     private String city;
     private String region;
-    private int postalcode;
+    private String postalcode;
     private String country;
-    private int phone;
-    private int fax;
+    private String phone;
+    private String fax;
 
-    public Customer() {
-    }
-
-    public Customer(String customerid, String companyname, String contactname, String contacttitle,
-                    String address, String city, String region, int postalcode, String country, int phone, int fax) {
+    public Customer(String customerid, String companyname,
+                    String contactname, String contacttitle, String address, String city, String region, String postalcode, String country, String phone, String fax) {
         this.customerid = customerid;
         this.companyname = companyname;
         this.contactname = contactname;
@@ -33,6 +30,9 @@ public class Customer {
         this.country = country;
         this.phone = phone;
         this.fax = fax;
+    }
+
+    public Customer() {
     }
 
     public String getCustomerid() {
@@ -91,11 +91,11 @@ public class Customer {
         this.region = region;
     }
 
-    public int getPostalcode() {
+    public String getPostalcode() {
         return postalcode;
     }
 
-    public void setPostalcode(int postalcode) {
+    public void setPostalcode(String postalcode) {
         this.postalcode = postalcode;
     }
 
@@ -107,19 +107,19 @@ public class Customer {
         this.country = country;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public int getFax() {
+    public String getFax() {
         return fax;
     }
 
-    public void setFax(int fax) {
+    public void setFax(String fax) {
         this.fax = fax;
     }
 
@@ -133,10 +133,10 @@ public class Customer {
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", region='" + region + '\'' +
-                ", postalcode=" + postalcode +
+                ", postalcode='" + postalcode + '\'' +
                 ", country='" + country + '\'' +
-                ", phone=" + phone +
-                ", fax=" + fax +
+                ", phone='" + phone + '\'' +
+                ", fax='" + fax + '\'' +
                 '}';
     }
 }
