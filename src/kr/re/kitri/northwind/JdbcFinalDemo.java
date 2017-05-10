@@ -1,5 +1,7 @@
 package kr.re.kitri.northwind;
 
+import jdk.nashorn.internal.scripts.JO;
+import kr.re.kitri.northwind.Model.Join;
 import kr.re.kitri.northwind.Service.JdbcService;
 import kr.re.kitri.northwind.Model.Customer;
 
@@ -33,6 +35,13 @@ public class JdbcFinalDemo {
 
         System.out.println("***************************************출력***************************************\n\n");
         for(Customer e : list){
+            System.out.println(e.toString());
+        }
+
+
+        List<Join> list2 = service.makeList2(DB_URL, USERNAME, PASSWORD);
+        System.out.println("***************************************출력***************************************\n\n");
+        for(Join e : list2){
             System.out.println(e.toString());
         }
 
